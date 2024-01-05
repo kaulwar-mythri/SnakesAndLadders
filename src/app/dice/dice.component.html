@@ -1,0 +1,4 @@
+<button class="dice-container" [ngClass]="{ 'rolling': rolling }" (click)="rollDice()" [disabled]="rolling">
+    <span *ngIf="!diceValue" class="dice-result">Roll</span>
+    <span *ngIf="diceValue !== null" class="dice-result">{{ diceValue }}</span>
+</button>
