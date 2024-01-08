@@ -14,12 +14,17 @@ export class PlayerComponent {
   getPlayerImage(): string {
     return `assets/${this.playerImages[this.player.id - 1]}`;
   }
+
+  getPlayerId(id: number) {
+    return `Player-${id}`
+  }
 }
 
 export interface Player {
   id: number;
   position: number;
 }
+
 
 //highlight current player
 //two players in same cell

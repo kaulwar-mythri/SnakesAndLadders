@@ -2,7 +2,9 @@
   <div *ngFor="let row of rows" class="board-row">
     <div *ngFor="let cell of row" class="cell" [ngClass]="{ 'has-players': hasPlayer(cell), 'snake': isSnake(cell), 'ladder': isLadder(cell) }">
       <ng-container *ngIf="hasPlayer(cell)">
-        <app-player [player]="getPlayerInCell(cell)"></app-player>
+        <div class="player-container">
+          <app-player *ngFor="let player of getPlayersInCell(cell)" [player]="player"></app-player>
+        </div>
       </ng-container>
       <ng-container *ngIf="isSnake(cell) || isLadder(cell)">
         <img class="snake-ladder" [src]="isSnake(cell) ? 'assets/snake.png' : 'assets/ladder.png'" alt="Snake or Ladder">

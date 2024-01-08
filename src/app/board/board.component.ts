@@ -28,8 +28,8 @@ export class BoardComponent {
     return this.players.some(player => player.position === cell);
   }
 
-  getPlayerInCell(cell: number): Player {
-    return this.players.find(player => player.position === cell)!;
+  getPlayersInCell(cell: number): Player[] {
+    return this.players.filter(player => player.position === cell);
   }
 
   isSnake(cell: number): boolean {

@@ -7,7 +7,7 @@
   <div class="sidebar">
     <app-dice (diceRolled)="handleDiceRoll($event)"></app-dice>
     <div class="players-container">
-      <app-player *ngFor="let player of players" [player]="player"></app-player>
+      <app-player *ngFor="let player of players; let i = index" [player]="player"></app-player>
     </div>
   </div>
 </div>
